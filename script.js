@@ -534,3 +534,85 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+/* ===== FEATURED PROJECT SLIDER ===== */
+
+const projectTrack = document.getElementById("projectTrack");
+const projectCards = document.querySelectorAll(
+    "#projectTrack .project-card"
+);
+const prevProject = document.getElementById("prevProject");
+const nextProject = document.getElementById("nextProject");
+const projectDots = document.querySelectorAll(".project-dot");
+const projectCounter = document.getElementById("projectCounter");
+
+let currentProject = 0;
+
+function showProject(index) {
+    const totalProjects = projectCards.length;
+
+    // Cycle through projects in both directions
+    currentProject = (index + totalProjects) % totalProjects;
+
+    projectTrack.style.transform =
+        `translateX(-${currentProject * 100}%)`;
+
+    projectDots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentProject);
+
+        if (i === currentProject) {
+            dot.setAttribute("aria-current", "true");
+        } else {
+            dot.removeAttribute("aria-current");
+        }
+    });
+
+    projectCounter.textContent =
+        `Project ${currentProject + 1} of ${totalProjects}`;
+}
+
+prevProject.addEventListener("click", () => {
+    showProject(currentProject - 1);
+});
+
+nextProject.addEventListener("click", () => {
+    showProject(currentProject + 1);
+});
+
+projectDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        showProject(index);
+    });
+});
+
+// Keyboard navigation when the page is focused
+document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+        showProject(currentProject - 1);
+    } else if (event.key === "ArrowRight") {
+        showProject(currentProject + 1);
+    }
+});
+
+// Swipe left or right on mobile
+let touchStartX = 0;
+
+projectTrack.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].screenX;
+}, { passive: true });
+
+projectTrack.addEventListener("touchend", (event) => {
+    const touchEndX = event.changedTouches[0].screenX;
+    const difference = touchEndX - touchStartX;
+
+    if (Math.abs(difference) > 50) {
+        showProject(
+            difference < 0
+                ? currentProject + 1
+                : currentProject - 1
+        );
+    }
+}, { passive: true });
+
+// Display the first project on page load
+showProject(0);
