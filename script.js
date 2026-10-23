@@ -616,3 +616,26 @@ projectTrack.addEventListener("touchend", (event) => {
 
 // Display the first project on page load
 showProject(0);
+// Skills navigation
+function showSkill(skillId, button) {
+    // Hide all skill cards
+    document.querySelectorAll(".skill-card").forEach(card => {
+        card.classList.remove("active");
+    });
+
+    // Remove active state from navigation buttons
+    document.querySelectorAll(".skill-nav-btn").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    // Display the selected skill
+    document.getElementById(skillId).classList.add("active");
+    button.classList.add("active");
+
+    // Update skill counter
+    const skillButtons = [...document.querySelectorAll(".skill-nav-btn")];
+    const skillNumber = skillButtons.indexOf(button) + 1;
+
+    document.getElementById("skillsCounter").textContent =
+        `Skill ${skillNumber} of ${skillButtons.length}`;
+}
