@@ -205,98 +205,108 @@
     </section>
 
 
-    <!-- Skills Section -->
-    <section class="section" id="skills">
+   <!-- My Skills Section -->
+<section id="skills" class="skills-section">
+    <div class="skills-container">
+        <h2 class="skills-title">My Skills</h2>
+        <p class="skills-subtitle">Explore my technical abilities</p>
 
-        <div class="section-title">
+        <!-- Skills Navigation -->
+        <nav class="skills-nav">
+            <button class="skill-nav-btn active"
+                    onclick="showSkill('programming', this)">
+                Programming
+            </button>
 
-            <p>MY TECHNICAL KNOWLEDGE</p>
+            <button class="skill-nav-btn"
+                    onclick="showSkill('problem-solving', this)">
+                Problem Solving
+            </button>
 
-            <h2>My <span>Skills</span></h2>
+            <button class="skill-nav-btn"
+                    onclick="showSkill('application-development', this)">
+                Application Development
+            </button>
 
-            <div class="title-line"></div>
+            <button class="skill-nav-btn"
+                    onclick="showSkill('project-development', this)">
+                Project Development
+            </button>
+        </nav>
 
+        <!-- Skill 1 -->
+        <div class="skill-card active" id="programming">
+            <div class="skill-icon">💻</div>
+            <h3>Programming</h3>
+            <p>
+                I enjoy writing clean and efficient code to solve problems
+                and build useful applications.
+            </p>
+
+            <div class="skill-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>C / C++</span>
+            </div>
         </div>
 
+        <!-- Skill 2 -->
+        <div class="skill-card" id="problem-solving">
+            <div class="skill-icon">🧠</div>
+            <h3>Problem Solving</h3>
+            <p>
+                I analyze problems logically, break them into smaller tasks,
+                and develop effective solutions.
+            </p>
 
-        <div class="skills-container">
-
-            <div class="skill-card">
-
-                <span class="skill-number">01</span>
-
-                <div class="skill-icon">01</div>
-
-                <h3>Programming</h3>
-
-                <p>
-                    Understanding programming concepts and
-                    developing logical thinking.
-                </p>
-
-                <span class="skill-tag">Programming</span>
-
+            <div class="skill-list">
+                <span>Logical Thinking</span>
+                <span>Debugging</span>
+                <span>Algorithms</span>
+                <span>Critical Thinking</span>
             </div>
-
-
-            <div class="skill-card">
-
-                <span class="skill-number">02</span>
-
-                <div class="skill-icon">02</div>
-
-                <h3>Problem Solving</h3>
-
-                <p>
-                    Analyzing problems and exploring
-                    effective solutions.
-                </p>
-
-                <span class="skill-tag">Logical Thinking</span>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <span class="skill-number">03</span>
-
-                <div class="skill-icon">03</div>
-
-                <h3>Application Development</h3>
-
-                <p>
-                    Learning how software applications
-                    are designed and developed.
-                </p>
-
-                <span class="skill-tag">Development</span>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <span class="skill-number">04</span>
-
-                <div class="skill-icon">04</div>
-
-                <h3>Project Development</h3>
-
-                <p>
-                    Applying technical concepts to
-                    academic and practical projects.
-                </p>
-
-                <span class="skill-tag">Project Work</span>
-
-            </div>
-
         </div>
 
-    </section>
+        <!-- Skill 3 -->
+        <div class="skill-card" id="application-development">
+            <div class="skill-icon">📱</div>
+            <h3>Application Development</h3>
+            <p>
+                I create interactive, user-friendly applications with
+                responsive layouts and practical features.
+            </p>
 
+            <div class="skill-list">
+                <span>Web Applications</span>
+                <span>Responsive Design</span>
+                <span>API Integration</span>
+                <span>UI Design</span>
+            </div>
+        </div>
 
+        <!-- Skill 4 -->
+        <div class="skill-card" id="project-development">
+            <div class="skill-icon">🚀</div>
+            <h3>Project Development</h3>
+            <p>
+                I turn ideas into working projects through planning,
+                coding, testing, and continuous improvement.
+            </p>
+
+            <div class="skill-list">
+                <span>Project Planning</span>
+                <span>Testing</span>
+                <span>Web Projects</span>
+                <span>Documentation</span>
+            </div>
+        </div>
+
+        <div class="skills-counter" id="skillsCounter">
+            Skill 1 of 4
+        </div>
+    </div>
+</section>
   
 <!-- Projects Section -->
 <section class="section project-section" id="projects">
