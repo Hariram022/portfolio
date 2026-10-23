@@ -1,148 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hariram K | Computer Science Student Portfolio</title>
-<meta name="description" content="Portfolio of Hariram K, a computer science student building applications and solving problems.">
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Hariram K's personal portfolio showcasing education, technical skills and projects.">
+
+    <title>Hariram K | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <nav class="nav" aria-label="Main">
-    <a class="logo" href="#home">HARIRAM K</a>
-    <button class="icon-btn menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="icon-btn" id="themeBtn" aria-label="Switch to light theme">☀</button>
-  </nav>
-</header>
 
-<main id="main">
-<section class="hero" id="home">
-  <div class="hero-text">
-    <p class="greeting" id="greeting">Welcome. I'm</p>
-    <h1>Hariram K</h1>
-    <p class="role">Computer Science student and beginner application developer</p>
-    <p>I enjoy turning everyday problems into working programs, one project at a time.</p>
-    <div class="actions">
-      <a class="btn" href="#projects">View my projects</a>
-      <a class="btn ghost" href="#contact">Contact me</a>
-    </div>
-    <div class="visitor" role="group" aria-label="Choose what you are here for">
-      <span>I'm visiting as:</span>
-      <button class="chip" data-who="a recruiter">Recruiter</button>
-      <button class="chip" data-who="a teacher">Teacher</button>
-      <button class="chip" data-who="a fellow developer">Developer</button>
-    </div>
-  </div>
-  <div class="photo-wrap">
-    <img src="images/profile.jpg" alt="Portrait of Hariram K wearing glasses and a dark blazer against a blue-grey background" width="487" height="514">
-  </div>
-</section>
+    <!-- Navigation Bar -->
+    <header class="header">
 
-<section id="about" class="section">
-  <h2>About me</h2>
-  <p>I'm Hariram, currently pursuing a degree in Computer Science. I like understanding how software works and building small tools that people can actually use.</p>
-  <p>So far I have built a restaurant billing system, a weather app and a calculator. Each one taught me how to break a big problem into smaller steps. I hope to work as a software developer and keep growing through real projects.</p>
-</section>
+        <a href="#home" class="logo">HARIRAM<span>.</span></a>
 
-<section id="skills" class="section">
-  <h2>Skills</h2>
-  <div class="grid three">
-    <article class="card"><h3>Programming</h3><p>Writing clear code, using logic and data structures to make programs work.</p></article>
-    <article class="card"><h3>Problem solving</h3><p>Breaking problems into steps, testing ideas and fixing what fails.</p></article>
-    <article class="card"><h3>Application and project development</h3><p>Planning, building and finishing complete applications from idea to working result.</p></article>
-  </div>
-</section>
+        <button class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+            ☰
+        </button>
 
-<section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="slider" id="slider" role="region" aria-roledescription="carousel" aria-label="Project gallery">
-    <div class="track" id="track">
-      <figure class="slide"><img src="images/project-restaurant.svg" alt="Restaurant order processing and billing system screen showing an order list and total"><figcaption>Restaurant Order Processing and Billing System</figcaption></figure>
-      <figure class="slide"><img src="images/project-weather.svg" alt="Weather app screen showing a temperature and city name"><figcaption>Weather App</figcaption></figure>
-      <figure class="slide"><img src="images/project-calculator.svg" alt="Calculator screen with a display and number buttons"><figcaption>Functional Calculator</figcaption></figure>
-    </div>
-    <button class="s-btn prev" id="prev" aria-label="Previous project">‹</button>
-    <button class="s-btn next" id="next" aria-label="Next project">›</button>
-    <div class="dots" id="dots"></div>
-  </div>
-  <div class="filters" role="group" aria-label="Filter projects">
-    <button class="chip active" data-filter="all" aria-pressed="true">All</button>
-    <button class="chip" data-filter="business" aria-pressed="false">Business</button>
-    <button class="chip" data-filter="utility" aria-pressed="false">Utility</button>
-  </div>
-  <div class="grid three">
-    <article class="card project" data-cat="business">
-      <div class="visual" role="img" aria-label="Project visual placeholder for the restaurant billing system">🍽</div>
-      <h3>Restaurant Order Processing and Billing System</h3>
-      <p>Takes customer orders and prepares the final bill.</p>
-      <p class="tools"><strong>Tools:</strong> Programming, problem solving</p>
-      <button class="more" aria-expanded="false">Show details</button>
-      <div class="details" hidden>
-        <p><strong>What I did:</strong> Built the order flow and the billing calculation.</p>
-        <p><strong>What I learned:</strong> Handling many items and totals correctly.</p>
-        <p class="note">Not published online. Screenshots or the project folder are included with my submission.</p>
-      </div>
-    </article>
-    <article class="card project" data-cat="utility">
-      <div class="visual" role="img" aria-label="Project visual placeholder for the weather app">⛅</div>
-      <h3>Weather App</h3>
-      <p>Shows weather conditions for a place the user chooses.</p>
-      <p class="tools"><strong>Tools:</strong> Application development</p>
-      <button class="more" aria-expanded="false">Show details</button>
-      <div class="details" hidden>
-        <p><strong>What I did:</strong> Designed the screen and displayed weather data.</p>
-        <p><strong>What I learned:</strong> Working with external data and showing it clearly.</p>
-        <p class="note">Not published online. Screenshots or the project folder are included with my submission.</p>
-      </div>
-    </article>
-    <article class="card project" data-cat="utility">
-      <div class="visual" role="img" aria-label="Project visual placeholder for the functional calculator">🧮</div>
-      <h3>Functional Calculator</h3>
-      <p>A working calculator that performs everyday arithmetic.</p>
-      <p class="tools"><strong>Tools:</strong> Programming, problem solving</p>
-      <button class="more" aria-expanded="false">Show details</button>
-      <div class="details" hidden>
-        <p><strong>What I did:</strong> Wrote the logic for each operation and the button layout.</p>
-        <p><strong>What I learned:</strong> Handling user input and edge cases.</p>
-        <p class="note">Not published online. Screenshots or the project folder are included with my submission.</p>
-      </div>
-    </article>
-  </div>
-</section>
+        <nav class="navbar" id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>Email me at <a href="mailto:farmtoearm@gmail.com">farmtoearm@gmail.com</a>, or fill in the form below.</p>
-  <form id="form" novalidate>
-    <label for="name">Name</label>
-    <input id="name" name="name" autocomplete="name" required>
-    <span class="err" id="nameErr" role="alert"></span>
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" autocomplete="email" required>
-    <span class="err" id="emailErr" role="alert"></span>
-    <label for="msg">Message</label>
-    <textarea id="msg" name="msg" rows="4" required></textarea>
-    <span class="err" id="msgErr" role="alert"></span>
-    <button class="btn" type="submit">Check my message</button>
-    <p id="status" role="status"></p>
-  </form>
-</section>
-</main>
+    </header>
 
-<footer class="footer">
-  <p>© <span id="year">2026</span> Hariram K. All rights reserved.</p>
-  <p><a href="#projects">Projects</a> · <a href="mailto:farmtoearm@gmail.com">Email</a></p>
-</footer>
-<button class="top" id="topBtn" aria-label="Back to top" hidden>↑</button>
-<script src="js/script.js"></script>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+
+        <div class="home-content">
+
+            <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+
+            <h1>Hello, I'm <span>Hariram K</span></h1>
+
+            <h2>Computer Science Student</h2>
+
+            <p class="home-description">
+                I am interested in technology, programming, and software
+                development. I enjoy exploring new ideas, improving my
+                technical knowledge, and developing practical solutions
+                through academic projects.
+            </p>
+
+            <div class="home-buttons">
+
+                <a href="#projects" class="btn">
+                    Explore My Project
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+            <div class="tech-tags">
+                <span>Technology</span>
+                <span>Problem Solving</span>
+                <span>Development</span>
+            </div>
+
+        </div>
+
+
+        <!-- Profile Photo -->
+        <div class="home-image">
+
+            <div class="image-glow"></div>
+
+            <div class="image-frame">
+                <img src="profile.jpg"
+                     alt="Hariram K Profile Photo">
+            </div>
+
+            <div class="floating-card">
+                <span class="gold-dot"></span>
+                Learning & Growing
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="section" id="about">
+
+        <div class="section-title">
+
+            <p>GET TO KNOW ME</p>
+
+            <h2>About <span>Me</span></h2>
+
+            <div class="title-line"></div>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="about-number">01</div>
+
+            <div class="about-content">
+
+                <h3>My Introduction</h3>
+
+                <p>
+                    I am Hariram K, interested in computer technology
+                    and software application development. I aim to improve
+                    my technical knowledge, strengthen my problem-solving
+                    abilities, and gain practical experience through
+                    projects. I believe that continuous learning helps
+                    me grow both personally and professionally.
+                </p>
+
+                <div class="about-details">
+
+                    <div class="detail-box">
+                        <span class="detail-label">NAME</span>
+                        <p>Hariram K</p>
+                    </div>
+
+                    <div class="detail-box">
+                        <span class="detail-label">FIELD</span>
+                        <p>Computer Science</p>
+                    </div>
+
+                    <div class="detail-box">
+                        <span class="detail-label">INTEREST</span>
+                        <p>Software Development</p>
+                    </div>
+
+                    <div class="detail-box">
+                        <span class="detail-label">EMAIL</span>
+                        <p>ijdermacare@gmail.com</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education Section -->
+    <section class="section education-section" id="education">
+
+        <div class="section-title">
+
+            <p>MY ACADEMIC JOURNEY</p>
+
+            <h2>My <span>Education</span></h2>
+
+            <div class="title-line"></div>
+
+        </div>
+
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <div class="education-icon">01</div>
+
+                <div>
+
+                    <span class="gold-label">CURRENT EDUCATION</span>
+
+                    <h3>Computer Science</h3>
+
+                    <p>
+                        Building knowledge in computer science,
+                        programming concepts, and software applications.
+                    </p>
+
+                    <p class="education-note">
+                        Add your exact degree, college name, and study
+                        period here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+
+        <div class="section-title">
+
+            <p>MY TECHNICAL KNOWLEDGE</p>
+
+            <h2>My <span>Skills</span></h2>
+
+            <div class="title-line"></div>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+
+                <span class="skill-number">01</span>
+
+                <div class="skill-icon">01</div>
+
+                <h3>Programming</h3>
+
+                <p>
+                    Understanding programming concepts and
+                    developing logical thinking.
+                </p>
+
+                <span class="skill-tag">Programming</span>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">02</span>
+
+                <div class="skill-icon">02</div>
+
+                <h3>Problem Solving</h3>
+
+                <p>
+                    Analyzing problems and exploring
+                    effective solutions.
+                </p>
+
+                <span class="skill-tag">Logical Thinking</span>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">03</span>
+
+                <div class="skill-icon">03</div>
+
+                <h3>Application Development</h3>
+
+                <p>
+                    Learning how software applications
+                    are designed and developed.
+                </p>
+
+                <span class="skill-tag">Development</span>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <span class="skill-number">04</span>
+
+                <div class="skill-icon">04</div>
+
+                <h3>Project Development</h3>
+
+                <p>
+                    Applying technical concepts to
+                    academic and practical projects.
+                </p>
+
+                <span class="skill-tag">Project Work</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects Section -->
+    <section class="section project-section" id="projects">
+
+        <div class="section-title">
+
+            <p>WHAT I'M WORKING ON</p>
+
+            <h2>Featured <span>Project</span></h2>
+
+            <div class="title-line"></div>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-top">
+
+                <span class="gold-label">ACADEMIC PROJECT</span>
+
+                <div class="project-icon">✦</div>
+
+            </div>
+
+
+            <h3>
+                Restaurant Order Processing
+                and Billing System
+            </h3>
+
+
+            <p>
+                The Restaurant Order Processing and Billing System
+                is designed to simplify restaurant order management
+                and billing activities. The system can help organize
+                customer orders, calculate item totals, and prepare
+                bills based on the items ordered.
+            </p>
+
+
+            <div class="project-features">
+
+                <div class="feature">
+                    <span>✦</span>
+                    Order Management
+                </div>
+
+                <div class="feature">
+                    <span>✦</span>
+                    Bill Calculation
+                </div>
+
+                <div class="feature">
+                    <span>✦</span>
+                    Item Details
+                </div>
+
+            </div>
+
+
+            <div class="project-tags">
+                <span>Restaurant System</span>
+                <span>Order Processing</span>
+                <span>Billing</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+
+        <div class="section-title">
+
+            <p>LET'S CONNECT</p>
+
+            <h2>Contact <span>Me</span></h2>
+
+            <div class="title-line"></div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="contact-heading">
+                <span class="gold-label">GET IN TOUCH</span>
+
+                <h3>Let's Start a Conversation</h3>
+
+                <p>
+                    Feel free to reach out for academic discussions,
+                    project-related communication, and professional
+                    opportunities.
+                </p>
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">@</div>
+
+                <div>
+                    <span class="contact-label">EMAIL ADDRESS</span>
+
+                    <a href="mailto:ijdermacare@gmail.com">
+                        ijdermacare@gmail.com
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">☎</div>
+
+                <div>
+                    <span class="contact-label">PHONE NUMBER</span>
+
+                    <a href="tel:8610559125">
+                        8610559125
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <a href="#home" class="footer-logo">
+            HARIRAM<span>.</span>
+        </a>
+
+        <p>
+            Designed with care by Hariram K.
+            <span id="current-year"></span>
+        </p>
+
+        <a href="#home" class="back-to-top">Back to Top ↑</a>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>
