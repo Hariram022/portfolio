@@ -1840,3 +1840,210 @@ body {
         transition: none;
     }
 }
+
+/* ===== ABOUT ME SLIDER FIX ===== */
+
+#about.about-section {
+    background: #080808;
+    color: #fff;
+}
+
+#about .about-slider {
+    max-width: 900px;
+    width: 100%;
+    margin: 30px auto 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+#about .about-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+#about .about-nav-btn {
+    padding: 13px 20px;
+    background: #151515;
+    color: #ddd;
+    border: 1px solid #80691f;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+#about .about-nav-btn:hover,
+#about .about-nav-btn.active {
+    background: #d4af37;
+    color: #080808;
+    border-color: #f5d76e;
+}
+
+/* IMPORTANT: Hide inactive slides */
+#about .about-slide {
+    display: none;
+    position: relative;
+    box-sizing: border-box;
+    padding: 45px 30px;
+    background: linear-gradient(145deg, #191919, #0b0b0b);
+    border: 1px solid #80691f;
+    border-radius: 16px;
+}
+
+/* IMPORTANT: Show only the active slide */
+#about .about-slide.active {
+    display: block;
+    animation: aboutFadeIn 0.35s ease;
+}
+
+#about .about-number {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    color: #d4af37;
+    font-size: 13px;
+}
+
+#about .about-slide-icon {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#about .about-slide h3 {
+    color: #f5d76e;
+    font-size: 27px;
+    text-align: center;
+    margin: 12px 0 20px;
+}
+
+#about .about-description {
+    max-width: 720px;
+    margin: 0 auto 25px;
+    color: #ccc;
+    line-height: 1.9;
+    text-align: center;
+}
+
+#about .about-details,
+#about .interest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 25px;
+}
+
+#about .detail-box,
+#about .interest-item {
+    box-sizing: border-box;
+    padding: 18px;
+    background: #111;
+    border: 1px solid #393018;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+#about .detail-box:hover,
+#about .interest-item:hover {
+    border-color: #d4af37;
+    transform: translateY(-3px);
+}
+
+#about .detail-label {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+#about .detail-box p {
+    color: #eee;
+    margin-bottom: 0;
+    overflow-wrap: anywhere;
+}
+
+#about .interest-item {
+    text-align: center;
+}
+
+#about .interest-item > span {
+    font-size: 30px;
+}
+
+#about .interest-item h4 {
+    color: #f5d76e;
+    margin: 10px 0;
+}
+
+#about .interest-item p {
+    color: #bbb;
+    line-height: 1.6;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+#about .about-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+    color: #f5d76e;
+}
+
+#about .about-arrow {
+    background: #151515;
+    color: #f5d76e;
+    border: 1px solid #80691f;
+    border-radius: 7px;
+    padding: 11px 16px;
+    cursor: pointer;
+}
+
+#about .about-arrow:hover {
+    background: #d4af37;
+    color: #080808;
+}
+
+@keyframes aboutFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    #about .about-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    #about .about-nav-btn {
+        padding: 12px 6px;
+        font-size: 12px;
+    }
+
+    #about .about-slide {
+        padding: 45px 16px 25px;
+    }
+
+    #about .about-details,
+    #about .interest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #about .about-slide h3 {
+        font-size: 23px;
+    }
+
+    #about .about-arrow {
+        padding: 9px;
+        font-size: 12px;
+    }
+}
