@@ -640,268 +640,75 @@ function showSkill(skillId, button) {
         `Skill ${skillNumber} of ${skillButtons.length}`;
 }
 
-/* ===== INTERACTIVE ABOUT ME SLIDER ===== */
 
-.about-section {
-    background: #080808;
-    color: #fff;
-}
+/* ===== ABOUT ME SLIDER - FIXED ===== */
 
-.about-slider {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-/* About navigation */
-.about-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 35px 0 28px;
-}
+    const aboutSection = document.getElementById("about");
 
-.about-nav-btn {
-    padding: 13px 22px;
-    background: #151515;
-    color: #ddd;
-    border: 1px solid #80691f;
-    border-radius: 9px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
+    if (!aboutSection) return;
 
-.about-nav-btn:hover,
-.about-nav-btn.active {
-    background: #d4af37;
-    color: #080808;
-    box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
-}
+    const slides = Array.from(
+        aboutSection.querySelectorAll(".about-slide")
+    );
 
-/* Slide cards */
-.about-slide {
-    display: none;
-    position: relative;
-    padding: 45px 35px;
-    background: linear-gradient(145deg, #191919, #0b0b0b);
-    border: 1px solid #80691f;
-    border-radius: 18px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-}
+    const navButtons = Array.from(
+        aboutSection.querySelectorAll(".about-nav-btn")
+    );
 
-.about-slide.active {
-    display: block;
-    animation: aboutSlideIn 0.45s ease;
-}
+    const counter = document.getElementById("aboutCounter");
+    const previousButton = document.getElementById("aboutPrev");
+    const nextButton = document.getElementById("aboutNext");
 
-.about-number {
-    position: absolute;
-    top: 18px;
-    right: 20px;
-    color: #d4af37;
-    font-size: 13px;
-    letter-spacing: 1px;
-}
+    let currentIndex = 0;
 
-.about-slide-icon {
-    font-size: 45px;
-    margin-bottom: 12px;
-}
+    function displaySlide(index) {
+        if (slides.length === 0) return;
 
-.about-slide h3 {
-    color: #f5d76e;
-    font-size: 28px;
-    margin: 12px 0 18px;
-}
+        // Keep the index within the available slides
+        currentIndex = (index + slides.length) % slides.length;
 
-.about-description {
-    color: #ccc;
-    line-height: 1.9;
-    max-width: 720px;
-    margin: 0 auto 28px;
-    text-align: center;
-}
+        slides.forEach(function (slide, i) {
+            const isActive = i === currentIndex;
 
-/* Introduction details */
-.about-details {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-    margin-top: 25px;
-}
+            slide.classList.toggle("active", isActive);
+            slide.setAttribute("aria-hidden", String(!isActive));
+        });
 
-.about-details .detail-box {
-    padding: 18px;
-    background: #111;
-    border: 1px solid #393018;
-    border-radius: 10px;
-    transition: 0.3s ease;
-}
+        navButtons.forEach(function (button, i) {
+            const isActive = i === currentIndex;
 
-.about-details .detail-box:hover {
-    border-color: #d4af37;
-    transform: translateY(-3px);
-}
+            button.classList.toggle("active", isActive);
+            button.setAttribute("aria-pressed", String(isActive));
+        });
 
-.detail-label {
-    color: #d4af37;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-}
-
-.about-details .detail-box p {
-    color: #eee;
-    margin: 9px 0 0;
-    overflow-wrap: anywhere;
-}
-
-/* Interests grid */
-.interest-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-}
-
-.interest-item {
-    padding: 22px 15px;
-    background: #111;
-    border: 1px solid #393018;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-.interest-item:hover {
-    transform: translateY(-5px);
-    border-color: #d4af37;
-    box-shadow: 0 8px 22px rgba(212, 175, 55, 0.1);
-}
-
-.interest-item > span {
-    font-size: 30px;
-}
-
-.interest-item h4 {
-    color: #f5d76e;
-    margin: 12px 0 8px;
-    font-size: 16px;
-}
-
-.interest-item p {
-    color: #bbb;
-    font-size: 13px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* Previous and next controls */
-.about-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.about-arrow {
-    background: #151515;
-    border: 1px solid #80691f;
-    border-radius: 8px;
-    padding: 11px 17px;
-    color: #f5d76e;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.about-arrow:hover {
-    background: #d4af37;
-    color: #080808;
-}
-
-.about-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.about-dot {
-    width: 11px;
-    height: 11px;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    background: #555;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.about-dot.active {
-    background: #d4af37;
-    transform: scale(1.25);
-}
-
-.about-counter {
-    color: #999;
-    text-align: center;
-    font-size: 13px;
-    margin-top: 15px;
-}
-
-@keyframes aboutSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
+        if (counter) {
+            counter.textContent =
+                "Slide " + (currentIndex + 1) + " of " + slides.length;
+        }
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+    // Navigation buttons
+    navButtons.forEach(function (button, index) {
+        button.addEventListener("click", function () {
+            displaySlide(index);
+        });
+    });
 
-/* Responsive layout */
-@media (max-width: 600px) {
-    .about-slide {
-        padding: 45px 18px 25px;
-    }
-
-    .about-slide h3 {
-        font-size: 23px;
+    // Previous and Next
+    if (previousButton) {
+        previousButton.addEventListener("click", function () {
+            displaySlide(currentIndex - 1);
+        });
     }
 
-    .about-nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
+    if (nextButton) {
+        nextButton.addEventListener("click", function () {
+            displaySlide(currentIndex + 1);
+        });
     }
 
-    .about-nav-btn {
-        padding: 12px 7px;
-        font-size: 12px;
-    }
-
-    .about-details,
-    .interest-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-arrow {
-        padding: 10px;
-        font-size: 12px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .about-slide.active {
-        animation: none;
-    }
-
-    .interest-item,
-    .about-arrow,
-    .about-nav-btn {
-        transition: none;
-    }
-}
+    // Show the first slide when the page loads
+    displaySlide(0);
+});
