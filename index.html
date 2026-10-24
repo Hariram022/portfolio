@@ -98,66 +98,150 @@
     </section>
 
 
-    <!-- About Section -->
-    <section class="section" id="about">
+ 
+<!-- About Me Section -->
+<section class="section about-section" id="about">
 
-        <div class="section-title">
+    <div class="section-title">
+        <p>GET TO KNOW ME</p>
+        <h2>About <span>Me</span></h2>
+        <div class="title-line"></div>
+    </div>
 
-            <p>GET TO KNOW ME</p>
+    <div class="about-slider">
 
-            <h2>About <span>Me</span></h2>
+        <!-- About Navigation -->
+        <nav class="about-nav" aria-label="About me navigation">
+            <button class="about-nav-btn active"
+                    onclick="showAboutSlide('introduction', this)">
+                👤 My Introduction
+            </button>
 
-            <div class="title-line"></div>
+            <button class="about-nav-btn"
+                    onclick="showAboutSlide('interests', this)">
+                ✨ My Interests
+            </button>
+        </nav>
 
-        </div>
+        <!-- Slide 1: My Introduction -->
+        <article class="about-slide active" id="introduction">
 
+            <span class="about-number">01 / 02</span>
+            <div class="about-slide-icon">👋</div>
 
-        <div class="about-card">
+            <h3>My Introduction</h3>
 
-            <div class="about-number">01</div>
+            <p class="about-description">
+                Hello! I am Hariram K, a Computer Science student
+                interested in computer technology and software
+                application development. I aim to strengthen my
+                technical knowledge, improve my problem-solving
+                abilities, and gain practical experience by building
+                useful projects.
+            </p>
 
-            <div class="about-content">
+            <div class="about-details">
 
-                <h3>My Introduction</h3>
+                <div class="detail-box">
+                    <span class="detail-label">NAME</span>
+                    <p>Hariram K</p>
+                </div>
 
-                <p>
-                    I am Hariram K, interested in computer technology
-                    and software application development. I aim to improve
-                    my technical knowledge, strengthen my problem-solving
-                    abilities, and gain practical experience through
-                    projects. I believe that continuous learning helps
-                    me grow both personally and professionally.
-                </p>
+                <div class="detail-box">
+                    <span class="detail-label">FIELD</span>
+                    <p>Computer Science</p>
+                </div>
 
-                <div class="about-details">
+                <div class="detail-box">
+                    <span class="detail-label">CAREER GOAL</span>
+                    <p>Software Developer</p>
+                </div>
 
-                    <div class="detail-box">
-                        <span class="detail-label">NAME</span>
-                        <p>Hariram K</p>
-                    </div>
-
-                    <div class="detail-box">
-                        <span class="detail-label">FIELD</span>
-                        <p>Computer Science</p>
-                    </div>
-
-                    <div class="detail-box">
-                        <span class="detail-label">INTEREST</span>
-                        <p>Software Development</p>
-                    </div>
-
-                    <div class="detail-box">
-                        <span class="detail-label">EMAIL</span>
-                        <p>ijdermacare@gmail.com</p>
-                    </div>
-
+                <div class="detail-box">
+                    <span class="detail-label">EMAIL</span>
+                    <p>ijdermacare@gmail.com</p>
                 </div>
 
             </div>
 
+        </article>
+
+        <!-- Slide 2: My Interests -->
+        <article class="about-slide" id="interests">
+
+            <span class="about-number">02 / 02</span>
+            <div class="about-slide-icon">🚀</div>
+
+            <h3>My Interests</h3>
+
+            <p class="about-description">
+                I enjoy learning new technologies and exploring how
+                they can solve real-world problems. I am interested
+                in web development, creating interactive applications,
+                improving my coding skills, and turning creative ideas
+                into practical projects. I believe continuous learning,
+                curiosity, and hands-on practice help me grow as a
+                future developer.
+            </p>
+
+            <div class="interest-grid">
+
+                <div class="interest-item">
+                    <span>💡</span>
+                    <h4>New Technologies</h4>
+                    <p>Exploring modern tools and technologies.</p>
+                </div>
+
+                <div class="interest-item">
+                    <span>🌐</span>
+                    <h4>Web Development</h4>
+                    <p>Building attractive and responsive websites.</p>
+                </div>
+
+                <div class="interest-item">
+                    <span>🧩</span>
+                    <h4>Problem Solving</h4>
+                    <p>Learning through logic and experimentation.</p>
+                </div>
+
+                <div class="interest-item">
+                    <span>⚙️</span>
+                    <h4>Creative Projects</h4>
+                    <p>Turning ideas into working applications.</p>
+                </div>
+
+            </div>
+
+        </article>
+
+        <!-- Navigation Controls -->
+        <div class="about-controls">
+
+            <button class="about-arrow" onclick="changeAboutSlide(-1)">
+                ← Previous
+            </button>
+
+            <div class="about-dots">
+                <button class="about-dot active"
+                        onclick="showAboutSlide('introduction', this)"
+                        aria-label="Show introduction"></button>
+
+                <button class="about-dot"
+                        onclick="showAboutSlide('interests', this)"
+                        aria-label="Show interests"></button>
+            </div>
+
+            <button class="about-arrow" onclick="changeAboutSlide(1)">
+                Next →
+            </button>
+
         </div>
 
-    </section>
+        <p class="about-counter" id="aboutCounter">Slide 1 of 2</p>
+
+    </div>
+
+</section>
 
 
     <!-- Education Section -->
