@@ -99,7 +99,8 @@
 
 
  
-<!-- About Me Section -->
+
+<!-- ABOUT ME SECTION -->
 <section class="section about-section" id="about">
 
     <div class="section-title">
@@ -110,21 +111,21 @@
 
     <div class="about-slider">
 
-        <!-- About Navigation -->
-        <nav class="about-nav" aria-label="About me navigation">
-            <button class="about-nav-btn active"
-                    onclick="showAboutSlide('introduction', this)">
+        <!-- Navigation -->
+        <div class="about-nav">
+            <button type="button" class="about-nav-btn active"
+                data-slide="introduction">
                 👤 My Introduction
             </button>
 
-            <button class="about-nav-btn"
-                    onclick="showAboutSlide('interests', this)">
+            <button type="button" class="about-nav-btn"
+                data-slide="interests">
                 ✨ My Interests
             </button>
-        </nav>
+        </div>
 
-        <!-- Slide 1: My Introduction -->
-        <article class="about-slide active" id="introduction">
+        <!-- Slide 1 -->
+        <div class="about-slide active" id="introduction">
 
             <span class="about-number">01 / 02</span>
             <div class="about-slide-icon">👋</div>
@@ -134,14 +135,12 @@
             <p class="about-description">
                 Hello! I am Hariram K, a Computer Science student
                 interested in computer technology and software
-                application development. I aim to strengthen my
-                technical knowledge, improve my problem-solving
-                abilities, and gain practical experience by building
-                useful projects.
+                application development. I want to improve my technical
+                knowledge, strengthen my problem-solving abilities,
+                and gain practical experience through projects.
             </p>
 
             <div class="about-details">
-
                 <div class="detail-box">
                     <span class="detail-label">NAME</span>
                     <p>Hariram K</p>
@@ -161,13 +160,11 @@
                     <span class="detail-label">EMAIL</span>
                     <p>ijdermacare@gmail.com</p>
                 </div>
-
             </div>
+        </div>
 
-        </article>
-
-        <!-- Slide 2: My Interests -->
-        <article class="about-slide" id="interests">
+        <!-- Slide 2 -->
+        <div class="about-slide" id="interests">
 
             <span class="about-number">02 / 02</span>
             <div class="about-slide-icon">🚀</div>
@@ -175,13 +172,11 @@
             <h3>My Interests</h3>
 
             <p class="about-description">
-                I enjoy learning new technologies and exploring how
+                I enjoy learning new technologies and discovering how
                 they can solve real-world problems. I am interested
                 in web development, creating interactive applications,
-                improving my coding skills, and turning creative ideas
-                into practical projects. I believe continuous learning,
-                curiosity, and hands-on practice help me grow as a
-                future developer.
+                improving my coding skills, and transforming creative
+                ideas into practical projects.
             </p>
 
             <div class="interest-grid">
@@ -195,13 +190,13 @@
                 <div class="interest-item">
                     <span>🌐</span>
                     <h4>Web Development</h4>
-                    <p>Building attractive and responsive websites.</p>
+                    <p>Creating responsive and attractive websites.</p>
                 </div>
 
                 <div class="interest-item">
-                    <span>🧩</span>
+                    <span>🧠</span>
                     <h4>Problem Solving</h4>
-                    <p>Learning through logic and experimentation.</p>
+                    <p>Developing logical thinking and debugging skills.</p>
                 </div>
 
                 <div class="interest-item">
@@ -211,36 +206,22 @@
                 </div>
 
             </div>
+        </div>
 
-        </article>
-
-        <!-- Navigation Controls -->
+        <!-- Slider Controls -->
         <div class="about-controls">
-
-            <button class="about-arrow" onclick="changeAboutSlide(-1)">
+            <button type="button" class="about-arrow" id="aboutPrev">
                 ← Previous
             </button>
 
-            <div class="about-dots">
-                <button class="about-dot active"
-                        onclick="showAboutSlide('introduction', this)"
-                        aria-label="Show introduction"></button>
+            <span id="aboutCounter">Slide 1 of 2</span>
 
-                <button class="about-dot"
-                        onclick="showAboutSlide('interests', this)"
-                        aria-label="Show interests"></button>
-            </div>
-
-            <button class="about-arrow" onclick="changeAboutSlide(1)">
+            <button type="button" class="about-arrow" id="aboutNext">
                 Next →
             </button>
-
         </div>
 
-        <p class="about-counter" id="aboutCounter">Slide 1 of 2</p>
-
     </div>
-
 </section>
 
 
